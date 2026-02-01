@@ -1,6 +1,8 @@
 :root {
   --color-text: #000;
+  --color-text-button: #57c4dc;
   --color-bg: #fff;
+  --color-bg-button: #16444f;
 }
 
 body {
@@ -15,6 +17,8 @@ a {
 @media (prefers-color-scheme: dark) {
   :root {
     --color-text: #fff;
+    --color-text-button: #fff;
     --color-bg: #23272f;
+    --color-bg-button: #383b3f;
   }
 }

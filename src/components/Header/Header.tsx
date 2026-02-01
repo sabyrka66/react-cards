@@ -1,6 +1,7 @@
 import styles from './Header.module.css'
 import LogoDark from '@/assets/icons/logo-dark.svg'
 import LogoLight from '@/assets/icons/logo-light.svg'
+import { Button } from '../Button'
 
 export const Header = () => {
   return (
@@ -16,8 +17,8 @@ export const Header = () => {
       </div>
 
       <div className={styles.actions}>
-        <button>Add</button>
-        <button>Log In</button>
+        <Button isActive>Add</Button>
+        <Button isDisabled={true}>Log In</Button>
       </div>
     </header>
   )
