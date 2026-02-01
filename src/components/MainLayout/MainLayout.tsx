@@ -1,4 +1,4 @@
-import styles from './MainLayout.module.scss'
+import styles from './MainLayout.module.css'
 
 export const MainLayout = () => {
   return (
