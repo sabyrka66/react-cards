@@ -1,0 +1,20 @@
+:root {
+  --color-text: #000;
+  --color-bg: #fff;
+}
+
+body {
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+a {
+  color: inherit;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text: #fff;
+    --color-bg: #23272f;
+  }
+}
