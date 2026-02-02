@@ -1,3 +1,4 @@
+import { Loader } from '@/components/Loader'
 import { QuestionCardList } from '@/components/QuestionCardList'
 import { API_URL } from '@/constants'
 import type { QuestionApiItem } from '@/types'
@@ -20,5 +21,10 @@ export const HomePage = () => {
     getQuestions()
   }, [])
 
-  return <QuestionCardList items={questionCards} />
+  return (
+    <div>
+      <Loader />
+      <QuestionCardList items={questionCards} />
+    </div>
+  )
 }
