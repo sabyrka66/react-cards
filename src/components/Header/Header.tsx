@@ -17,8 +17,8 @@ export const Header = () => {
       </div>
 
       <div className={styles.actions}>
-        <Button isActive>Add</Button>
-        <Button isDisabled={true}>Log In</Button>
+        <Button isDisabled>Add</Button>
+        <Button>Log In</Button>
       </div>
     </header>
   )
