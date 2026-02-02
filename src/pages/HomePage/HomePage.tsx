@@ -1,33 +1,23 @@
 import { Loader } from '@/components/Loader'
 import { QuestionCardList } from '@/components/QuestionCardList'
 import { API_URL } from '@/constants'
-import { artificialDelay } from '@/heplers/artificialDelay'
+import { useFetch } from '@/hooks/useFetch'
 import type { QuestionApiItem } from '@/types'
 import { useEffect, useState } from 'react'
 
 export const HomePage = () => {
   const [questionCards, setQuestionCards] = useState<QuestionApiItem[]>([])
-  const [isLoading, setIsLoading] = useState<boolean>(false)
+
+  const { fetchResponse, isLoading } = useFetch(async () => {
+    const response = await fetch(`${API_URL}/react`)
+    const questions = await response.json()
+
+    setQuestionCards(questions)
+    return questions
+  })
 
   useEffect(() => {
-    const getQuestions = async () => {
-      try {
-        setIsLoading(true)
-
-        await artificialDelay()
-
-        const response = await fetch(`${API_URL}/react`)
-        const questions = await response.json()
-
-        setQuestionCards(questions)
-      } catch (error) {
-        console.log(error)
-      } finally {
-        setIsLoading(false)
-      }
-    }
-
-    getQuestions()
+    fetchResponse('react')
   }, [])
 
   return (
