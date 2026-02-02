@@ -9,7 +9,7 @@ export const useFetch = (callback: (arg: string) => void) => {
     try {
       setIsLoading(true)
       await artificialDelay()
-      return await callback(arg)
+      return callback(arg)
     } catch (error: unknown) {
       if (error instanceof Error) {
         setError(error.message)

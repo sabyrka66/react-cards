@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react'
 export const HomePage = () => {
   const [questionCards, setQuestionCards] = useState<QuestionApiItem[]>([])
 
-  const { fetchResponse, isLoading } = useFetch(async () => {
+  const { fetchResponse, isLoading, error } = useFetch(async () => {
     const response = await fetch(`${API_URL}/react`)
     const questions = await response.json()
 
@@ -23,6 +23,7 @@ export const HomePage = () => {
   return (
     <div>
       {isLoading && <Loader />}
+      {error && <p>{error}</p>}
       <QuestionCardList items={questionCards} />
     </div>
   )
