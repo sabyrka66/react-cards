@@ -9,6 +9,7 @@ export const App = () => {
         <Route element={<MainLayout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/add-question" element="add question" />
+          <Route path="/question/:id" element="question page" />
         </Route>
       </Routes>
     </BrowserRouter>
