@@ -36,6 +36,7 @@
     "eslint-plugin-react-x": "^2.8.4",
     "globals": "^16.5.0",
     "husky": "^9.1.7",
+    "json-server": "^1.0.0-beta.5",
     "lint-staged": "^16.2.7",
     "prettier": "3.8.1",
     "typescript": "~5.9.3",
