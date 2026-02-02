@@ -7,6 +7,7 @@ export const App = () => {
       <Routes>
         <Route element={<MainLayout />}>
           <Route path="/" element="main" />
+          <Route path="/add-question" element="add question" />
         </Route>
       </Routes>
     </BrowserRouter>
