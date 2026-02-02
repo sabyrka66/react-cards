@@ -7,32 +7,32 @@
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 8px rgba(0 0 0 / 0.2);
+}
 
-  .logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    column-gap: 10px;
-    cursor: pointer;
-    user-select: none;
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  cursor: pointer;
+  user-select: none;
 
-    img {
-      width: 42px;
-    }
-
-    span {
-      font-weight: 500;
-      font-size: 18px;
-      color: #0a7ea4;
-    }
+  img {
+    width: 42px;
   }
 
-  .actions {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+  span {
+    font-weight: 500;
+    font-size: 18px;
+    color: #0a7ea4;
   }
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 @media (prefers-color-scheme: dark) {
