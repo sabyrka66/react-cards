@@ -1,0 +1,45 @@
+.card {
+  width: 300px;
+  height: 350px;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: var(--color-bg-card);
+  color: var(--color-text);
+  box-shadow: 0 0 8px 5px rgba(0 0 0 / 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 15px;
+
+  .cardHeader {
+    display: flex;
+    gap: 10px;
+  }
+
+  .cardTitle {
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 600;
+  }
+
+  .cardFooter {
+    margin-top: auto;
+  }
+
+  .shortAnswer {
+    font-size: 14px;
+    filter: blur(2px);
+    font-style: italic;
+    cursor: pointer;
+    transition-duration: 0.4s;
+
+    &:hover {
+      filter: none;
+    }
+  }
+
+  button {
+    align-self: flex-end;
+  }
+}

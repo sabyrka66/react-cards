@@ -1,24 +1,11 @@
-:root {
-  --color-text: #000;
-  --color-text-button: #57c4dc;
-  --color-bg: #fff;
-  --color-bg-button: #16444f;
-}
+@import url('https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap');
 
 body {
   color: var(--color-text);
   background-color: var(--color-bg);
+  font-family: 'TikTok Sans', sans-serif;
 }
 
 a {
   color: inherit;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-text: #fff;
-    --color-text-button: #fff;
-    --color-bg: #23272f;
-    --color-bg-button: #383b3f;
-  }
 }
