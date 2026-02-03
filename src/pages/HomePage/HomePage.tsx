@@ -4,6 +4,7 @@ import { API_URL } from '@/constants'
 import { useFetch } from '@/hooks/useFetch'
 import type { QuestionApiItem } from '@/types'
 import { useEffect, useState, type ChangeEvent } from 'react'
+import styles from './HomePage.module.css'
 
 export const HomePage = () => {
   const [questionCards, setQuestionCards] = useState<QuestionApiItem[]>([])
@@ -28,7 +29,13 @@ export const HomePage = () => {
 
   return (
     <div>
-      <input type="text" value={searchValue} onChange={onSearchValueHandler} />
+      <div className={styles.controlsContainer}>
+        <input
+          type="text"
+          value={searchValue}
+          onChange={onSearchValueHandler}
+        />
+      </div>
 
       {isLoading && <Loader />}
       {error && <p>{error}</p>}
