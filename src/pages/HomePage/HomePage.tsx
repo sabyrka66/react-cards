@@ -21,14 +21,14 @@ export const HomePage = () => {
     fetchResponse('react')
   }, [])
 
-  const searchValueHandler = (event: ChangeEvent<HTMLInputElement>) => {
+  const onSearchValueHandler = (event: ChangeEvent<HTMLInputElement>) => {
     setSearchValue(event.target.value)
     console.log(event.target.value)
   }
 
   return (
     <div>
-      <input type="text" value={searchValue} onChange={searchValueHandler} />
+      <input type="text" value={searchValue} onChange={onSearchValueHandler} />
 
       {isLoading && <Loader />}
       {error && <p>{error}</p>}
