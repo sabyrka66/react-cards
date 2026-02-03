@@ -33,7 +33,7 @@ export const HomePage = () => {
       <div className={styles.controlsContainer}>
         <SearchField
           searchValue={searchValue}
-          onSearchValueHandler={onSearchValueHandler}
+          onChange={onSearchValueHandler}
         />
       </div>
 
