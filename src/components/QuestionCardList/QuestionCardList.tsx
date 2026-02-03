@@ -1,6 +1,7 @@
 import type { CardAttributes, QuestionApiItem } from '@/types'
 import { QuestionCard } from '../QuestionCard/QuestionCard'
 import styles from './QuestionCardList.module.css'
+import { memo } from 'react'
 
 const adaptCard = (item: QuestionApiItem): CardAttributes => ({
   id: item.id,
@@ -14,7 +15,7 @@ interface Props {
   items: QuestionApiItem[]
 }
 
-export const QuestionCardList = ({ items }: Props) => {
+export const QuestionCardList = memo(({ items }: Props) => {
   return (
     <div className={styles.cardList}>
       {items.map((item) => {
@@ -23,4 +24,4 @@ export const QuestionCardList = ({ items }: Props) => {
       })}
     </div>
   )
-}
+})
