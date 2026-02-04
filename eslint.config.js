@@ -5,11 +5,13 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 import reactX from 'eslint-plugin-react-x'
 import reactDom from 'eslint-plugin-react-dom'
 import tseslint from 'typescript-eslint'
+import prettierConfig from 'eslint-config-prettier'
 import eslintPluginPrettier from 'eslint-plugin-prettier'
 import { defineConfig, globalIgnores } from 'eslint/config'
 
 export default defineConfig([
   globalIgnores(['dist']),
+  prettierConfig,
   {
     files: ['**/*.{ts,tsx}'],
     extends: [
@@ -19,7 +21,6 @@ export default defineConfig([
       reactRefresh.configs.vite,
       reactX.configs['recommended-typescript'],
       reactDom.configs.recommended,
-      'prettier',
     ],
     plugins: {
       prettier: eslintPluginPrettier,

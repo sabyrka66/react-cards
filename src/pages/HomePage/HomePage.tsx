@@ -11,17 +11,22 @@ export const HomePage = () => {
   const [questionCards, setQuestionCards] = useState<QuestionApiItem[]>([])
   const [searchValue, setSearchValue] = useState<string>('')
 
-  const { fetchResponse, isLoading, error } = useFetch(async () => {
-    const response = await fetch(`${API_URL}/react`)
-    const questions = await response.json()
+  const { fetchResponse, isLoading, error } = useFetch(
+    async (): Promise<void> => {
+      const response = await fetch(`${API_URL}/react`)
 
-    setQuestionCards(questions)
-    return questions
-  })
+      if (!response.ok) {
+        throw new Error('Failed to fetch questions')
+      }
+
+      const questions = (await response.json()) as QuestionApiItem[]
+      setQuestionCards(questions)
+    },
+  )
 
   useEffect(() => {
-    fetchResponse('react')
-  }, [])
+    void fetchResponse('react')
+  }, [fetchResponse])
 
   const onSearchValueHandler = (event: ChangeEvent<HTMLInputElement>) => {
     setSearchValue(event.target.value)

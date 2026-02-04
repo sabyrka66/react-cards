@@ -1,15 +1,15 @@
-import { artificialDelay } from '@/heplers/artificialDelay'
+import { artificialDelay } from '@/helpers/artificialDelay'
 import { useState } from 'react'
 
-export const useFetch = (callback: (arg: string) => void) => {
-  const [isLoading, setIsLoading] = useState<boolean>(false)
+export const useFetch = (callback: (arg: string) => Promise<void>) => {
+  const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string>('')
 
-  const fetchResponse = async (arg: string) => {
+  const fetchResponse = async (arg: string): Promise<void> => {
     try {
       setIsLoading(true)
       await artificialDelay()
-      return callback(arg)
+      await callback(arg)
     } catch (error: unknown) {
       if (error instanceof Error) {
         setError(error.message)
