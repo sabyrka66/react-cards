@@ -1,5 +1,5 @@
 import type { CardAttributes, QuestionApiItem } from '@/types'
-import { QuestionCard } from '../QuestionCard/QuestionCard'
+import { QuestionCard } from '../QuestionCard'
 import styles from './QuestionCardList.module.css'
 import { memo } from 'react'
 
